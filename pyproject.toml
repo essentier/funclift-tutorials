@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "funclift-tutorials"
+version = "0.1.0"
+description = ""
+authors = ["Essentier <essential.tier@gmail.com>"]
+readme = "README.md"
+packages = [{include = "funclift_tutorials"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+funclift = "^0.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = {git = "https://github.com/python/mypy.git"}
+pytest = "^7.4.0"
+hypothesis = "^6.80.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
