@@ -1,17 +1,8 @@
 from typing import TypeVar
 from dsl import TextFileOp, Read, Write
-from functools import wraps
-from funclift.types.id import Id
+from funclift.types.id import Id, id_effect
 
 A = TypeVar('A')
-
-
-def id_effect(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs) -> Id[A]:
-        return Id(func(*args, **kwargs))
-
-    return wrapper
 
 
 class TextFileMock():
