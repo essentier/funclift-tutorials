@@ -1,8 +1,9 @@
+
 def foo(b: bool) -> int:
-    return (2 if b else 3)
+    return (-2 if b else 3)
 
 def bar(n: int) -> str:
-    return 'h' * n
+    return 'h' * abs(n)
 
 def foo_then_bar(b: bool) -> str:
     '''

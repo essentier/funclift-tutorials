@@ -28,9 +28,9 @@ def sum(a: int, b: int) -> int:
 
 
 def sum_mod_bys(x: int, y: int) -> Option[int]:
-    # return ten_mod_by(x) \
-    #     .fmap(sum) \
-    #     .ap(ten_mod_by(y))
+    return ten_mod_by(x) \
+        .fmap(sum) \
+        .ap(ten_mod_by(y))
 
     return Option.pure(sum) \
         .ap(ten_mod_by(x)) \
