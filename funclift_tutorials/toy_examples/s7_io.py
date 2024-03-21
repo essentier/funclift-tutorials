@@ -35,3 +35,14 @@ def create_program_monads():
 # program.unsafe_run()
 
 # y = IO(lambda: input('enter another number: '))
+
+def is_even(n: int) -> bool: return n % 2 == 0
+def get_number() -> IO[int]:
+    return IO(lambda: int(input('enter a number: ')))
+
+def get_number() -> int:
+    return int(input('enter a number: '))
+
+num = get_number()
+num_even = num.fmap(is_even)
+num_even.unsafe_run()

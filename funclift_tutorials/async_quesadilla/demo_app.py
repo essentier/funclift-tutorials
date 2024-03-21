@@ -4,11 +4,6 @@ from funclift.types.aio import AIO
 from funclift.fp.monad_runner import run_monads
 
 
-async def cook(meat):
-    print(f'start cooking {meat}')
-    await asyncio.sleep(5)
-    print(f'finish cooking {meat}')
-    return f'cooked {meat}'
 
 async def prepare_cheese(cheese_type):
     print('start preparing cheese')
@@ -22,6 +17,11 @@ async def melt(thing):
     print(f'finish melting {thing}')
     return f'melted {thing}'
 
+async def cook(meat):
+    print(f'start cooking {meat}')
+    await asyncio.sleep(5)
+    print(f'finish cooking {meat}')
+    return f'cooked {meat}'
 
 async def fold_into_tortilla(*args):
     print('start folding filling into tortilla')
