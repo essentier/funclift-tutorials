@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Callable, Generic, Protocol, TypeVar, Tuple
+from funclift.types.either import Either
 import logging
 
 log = logging.getLogger(__name__)
@@ -57,3 +58,11 @@ class Strong(Profunctor[P, B, C], Protocol):
         ...
 
 
+class Choice(Profunctor[P, A, B], Protocol):
+    """Strong"""
+
+    def left(self) -> Choice[P, Either[A, C], Either[B, C]]:
+        ...
+
+    def right(self) -> Choice[P, Either[C, A], Either[C, B]]:
+        ...
